@@ -19,6 +19,7 @@
         <li><a href="#testimonials" onclick="toogleMenu()">Testimonials</a></li>
         <li><a href="#contact" onclick="toogleMenu()">Contact</a></li>
       </ul>
+      <div class="themeSwitch"></div>
     </div>
     <div class="main">
       <div class="topbar">
@@ -163,16 +164,25 @@
   </div>
 
   <script>
-    // add menu active function
+    let body = document.querySelector('body');
     let navigation = document.querySelector('.navigation');
     let main = document.querySelector('.main');
     let topbar = document.querySelector('.topbar');
     let toggle = document.querySelector('.toggle');
+    let themeSwitch = document.querySelector('.themeSwitch');
+    
+    // add menu active function
     toggle.onclick = function(){
       navigation.classList.toggle('active');
       main.classList.toggle('active'); 
       topbar.classList.toggle('active');
       toggle.classList.toggle('active');
+      themeSwitch.classList.toggle('active');
+    }
+
+    // theme switch toggle
+    themeSwitch.onclick = function(){
+      body.classList.toggle('dark')
     }
     
     // fix menu active class issue
@@ -182,7 +192,6 @@
       navigation.classList.remove('active');
       main.classList.remove('active'); 
     }
-
   </script>
 </body>
 </html>
